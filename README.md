@@ -1,4 +1,4 @@
-# A mini ASCII minesweeper game
+# A tiny ASCII minesweeper game
 
 ## What?
 
