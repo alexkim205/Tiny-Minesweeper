@@ -122,17 +122,17 @@ class Grid:
       self.bftraverse(cell)
     else:
       # cell is a number
-      print("Cell uncovered at r:{} c:{}.".format(r,c))
+      print("Cell uncovered at r:{} c:{}.".format(r, c))
       cell.uncover()
-  
+
   def toggle_flag_cell(self, r, c):
     cell = self.grid[r][c]
 
     if cell.isExposed:
       printE("You cannot flag an uncovered cell.")
     else:
-      print("Flag toggled at r:{} c:{}.".format(r,c))
-      cell.toggle_flag()  
+      print("Flag toggled at r:{} c:{}.".format(r, c))
+      cell.toggle_flag()
 
   # Breadth-First Traverse
   def bftraverse(self, node):
@@ -191,7 +191,8 @@ To uncover a cell, type `u(r,c)`.
 
   def error_checking(self, function):
     try:
-      parsed = function.translate(str.maketrans({key: None for key in string.punctuation}))
+      parsed = function.translate(
+          str.maketrans({key: None for key in string.punctuation}))
       parsed_func = parsed[0]
 
     except:
@@ -218,16 +219,6 @@ To uncover a cell, type `u(r,c)`.
 
 
 if __name__ == "__main__":
-
-  grid = [
-      [0, 1, 1, 1, 0, 0, 0],
-      [0, 1, '*', 1, 0, 0, 0],
-      [0, 2, 2, 2, 0, 0, 0],
-      [0, 1, '*', 1, 0, 0, 0],
-      [0, 1, 1, 1, 0, 0, 0],
-      [0, 0, 0, 1, 1, 1, 0],
-      [0, 0, 0, 1, '*', 1, 0],
-  ]
-
+  from minefield import grid
   game = Game(grid)
   game.play()
